@@ -1,5 +1,6 @@
 <template>
   <nav>
+    <!-- toolbar -->
     <v-toolbar flat class="grey lighten-3 pl-1">
       <v-app-bar-nav-icon
         class="gret--text white"
@@ -9,7 +10,7 @@
 
       <v-spacer></v-spacer>
 
-      <!-- button -->
+      <!-- toolbar buttons -->
       <v-text-field
         label="Search"
         class="mt-6 mr-2"
@@ -30,11 +31,11 @@
         <v-icon>mdi-account</v-icon>
       </v-btn>
 
-      <!-- end button -->
+      <!-- end toolbar buttons -->
     </v-toolbar>
+    <!-- end toolbar -->
 
     <!-- navigation menu -->
-
     <v-navigation-drawer
       v-model="drawer"
       expand-on-hover
@@ -43,17 +44,16 @@
       app
       dark
       mobile-breakpoint="800"
-      >
-    <v-img 
-        style="position: absolute; z-index: -1;" 
-        height="100%" 
+    >
+      <v-img
+        style="position: absolute; z-index: -1"
+        height="100%"
         src="../assets/nav.jpg"
-        gradient="to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.55)"></v-img>
+        gradient="to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.55)"
+      ></v-img>
       <v-list-item dark two-line class="ma-2">
         <v-list-item-content>
-          <v-list-item-title
-            class="title text-uppercase title"
-          >
+          <v-list-item-title class="title text-uppercase title">
             <span class="logo-mini">CT</span>
             <span class="logo-normal ml-6">Creative tim</span>
           </v-list-item-title>
@@ -74,15 +74,17 @@
           </template>
 
           <v-list-item v-for="(item, i) in john" :key="i" link class="px-6">
-              <v-list-item-icon class="caption">{{ item.icon }}</v-list-item-icon>
-            <v-list-item-title class="caption">{{ item.text }}</v-list-item-title>
+            <v-list-item-icon class="caption">{{ item.icon }}</v-list-item-icon>
+            <v-list-item-title class="caption">{{
+              item.text
+            }}</v-list-item-title>
           </v-list-item>
         </v-list-group>
       </v-list>
 
-      <v-divider  class="mx-7 my-3 grey lighten--3"></v-divider>
+      <v-divider class="mx-7 my-3 grey lighten--3"></v-divider>
 
-      <v-list nav class="mx-2" v-for="(link, i) in links" :key="i"> 
+      <v-list nav class="mx-2" v-for="(link, i) in links" :key="i">
         <v-list-item :to="link.route">
           <v-list-item-icon>
             <v-icon>{{ link.icon }}</v-icon>
@@ -126,7 +128,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.drawer-wrapper {
-    background-color: red;
-}
 </style>
