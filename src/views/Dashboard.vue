@@ -1366,7 +1366,7 @@
 
           <v-card-actions>
             <v-icon small>mdi-clock-outline</v-icon>
-            <span class="ml-1 caption grey--text font-weight-light">{{
+            <span class="mx-1 body-2 grey--text font-weight-light">{{
               $t('dashboard.charts[0].subtitle')
             }}</span>
           </v-card-actions>
@@ -1403,7 +1403,7 @@
 
           <v-card-actions>
             <v-icon small>mdi-clock-outline</v-icon>
-            <span class="ml-1 caption grey--text font-weight-light">{{
+            <span class="mx-1 body-2 grey--text font-weight-light">{{
               $t('dashboard.charts[1].subtitle')
             }}</span>
           </v-card-actions>
@@ -1440,7 +1440,7 @@
 
           <v-card-actions>
             <v-icon small>mdi-clock-outline</v-icon>
-            <span class="ml-1 caption grey--text font-weight-light">{{
+            <span class="mx-1 body-2 grey--text font-weight-light">{{
               $t('dashboard.charts[2].subtitle')
             }}</span>
           </v-card-actions>
@@ -1473,7 +1473,7 @@
 
           <v-card-actions>
             <v-icon small>{{ item.fI }}</v-icon>
-            <span class="ml-1 caption grey--text font-weight-light">
+            <span class="mx-1 body-2 grey--text font-weight-light">
               {{ item.fText }}
               </span>
           </v-card-actions>
@@ -1528,7 +1528,7 @@
           <v-divider class="mx-4"></v-divider>
 
           <v-card-actions class="mb-2">
-            <div class="display-2 font-weight-light grey--text body-2">{{card.price}}/night</div>
+            <div class="display-2 font-weight-light grey--text body-2">{{ card.price }}/{{ card.time }}</div>
             <v-spacer></v-spacer>
             <span class="caption grey--text font-weight-light">
               <v-icon>mdi-map-marker</v-icon>{{

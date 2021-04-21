@@ -1,7 +1,7 @@
 <template>
-  <div class="projects">
+  <v-container class="projects">
     <h1 class="subheading grey--text">{{ $t('projects.header.content') }}</h1>
-  </div>
+  </v-container>
 </template>
 
 <script>

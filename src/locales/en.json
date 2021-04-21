@@ -11,6 +11,19 @@
         "icon": "mdi-account"
       }
     ],
+    "menu": {
+      "content": "LAN",
+      "lists": [
+        {
+          "content": "فارسی",
+          "key": "pr"
+        },
+        {
+          "content": "English",
+          "key": "en"
+        }
+      ]
+    },
     "search": {
       "label": "Search",
       "icon": "mdi-magnify"
@@ -38,12 +51,14 @@
       {
         "icon": "mdi-view-dashboard",
         "title": "Dashboard",
-        "route": "/"
+        "route": "/en",
+        "exact": true
       },
       {
         "icon": "mdi-folder",
         "title": "My projects",
-        "route": "/projects"
+        "route": "/en/projects",
+        "exact": false
       }
     ]
   },
@@ -174,19 +189,22 @@
         "title": "Cozy Apartment",
         "text": "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the life in Barcelona",
         "price": "$899",
-        "location": "Barcelona, Spain"
+        "location": "Barcelona, Spain",
+        "time": "Night"
       },
       {
         "title": "Office Studio",
         "text": "The place is close to Metro Station and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the night life in London, UK.",
         "price": "$1.119",
-        "location": "London, UK"
+        "location": "London, UK",
+        "time": "Night"
       },
       {
         "title": "Beautiful Castle",
         "text": "The place is close to Metro Station and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Milan.",
         "price": "$459",
-        "location": "Milan, Italy"
+        "location": "Milan, Italy",
+        "time": "Night"
       }
     ]
   },

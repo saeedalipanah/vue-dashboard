@@ -24,6 +24,30 @@
         <v-icon>{{ btn.icon }}</v-icon>
       </v-btn>
 
+      <!-- dropdown menu -->
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn elevation="0" color="grey lighten-3 grey--text text--darken-1" v-bind="attrs" v-on="on">
+            <v-icon>mdi-chevron-down</v-icon>
+            <span>{{ $t('header.menu.content') }}</span>
+          </v-btn>
+        </template>
+
+        <v-list
+          v-for="(lan, i) in $t('header.menu.lists')" 
+          :key="i" 
+        >
+          <v-list-item @click="setLang(lan.key)">
+            <v-list-item-content>
+              <v-list-item-title class="grey-text">
+                {{ lan.content }}
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <!-- end dropdown menu -->
+
       <!-- end toolbar buttons -->
     </v-toolbar>
     <!-- end toolbar -->
@@ -37,6 +61,7 @@
       app
       dark
       mobile-breakpoint="800"
+      :right="right()"
     >
       <v-img
         style="position: absolute; z-index: -1"
@@ -44,16 +69,12 @@
         src="../assets/nav.jpg"
         gradient="to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.55)"
       ></v-img>
-      <v-list-item dark two-line class="ma-2">
-        <v-list-item-content>
-          <v-list-item-title class="title text-uppercase title">
-            <span class="logo-mini">{{ $t('header.logo.short') }}</span>
-            <span class="logo-normal ml-6">{{ $t('header.logo.long') }}</span>
-          </v-list-item-title>
-        </v-list-item-content>
+      <v-list-item dark class="ma-2">
+          <v-list-item-icon><v-icon>{{ $t('header.logo.short') }}</v-icon></v-list-item-icon>
+          <v-list-item-title class="text-uppercase">{{ $t('header.logo.long') }}</v-list-item-title>
       </v-list-item>
 
-      <v-divider class="mx-7 my-3 grey lighten--3"></v-divider>
+      <v-divider class="mx-7 mb-3 grey lighten--3"></v-divider>
 
       <v-list class="ma-2">
         <v-list-group>
@@ -63,12 +84,12 @@
                 src="https://randomuser.me/api/portraits/men/85.jpg"
               ></v-img>
             </v-list-item-avatar>
-            <v-list-item-title>{{ $t('header.name') }}</v-list-item-title>
+            <v-list-item-title class="body-1">{{ $t('header.name') }}</v-list-item-title>
           </template>
 
           <v-list-item v-for="(item, i) in $t('header.user')" :key="i" link class="px-6">
             <v-list-item-icon class="caption">{{ item.icon }}</v-list-item-icon>
-            <v-list-item-title class="caption">{{
+            <v-list-item-title class="body-2">{{
               item.text
             }}</v-list-item-title>
           </v-list-item>
@@ -78,7 +99,7 @@
       <v-divider class="mx-7 my-3 grey lighten--3"></v-divider>
 
       <v-list nav class="mx-2" v-for="(link, i) in $t('header.links')" :key="i">
-        <v-list-item :to="link.route">
+        <v-list-item :to="link.route" :exact="link.exact">
           <v-list-item-icon>
             <v-icon>{{ link.icon }}</v-icon>
           </v-list-item-icon>
@@ -93,12 +114,31 @@
 </template>
 
 <script>
+import i18n from '../i18n';
+
 export default {
   data() {
     return {
-      drawer: true,
+      drawer: true
     };
   },
+  methods: {
+    right() {
+      if(i18n.locale == "pr") {
+        this.$vuetify.rtl = true;
+        return true;
+      } else {
+        this.$vuetify.rtl = false;
+        return false;
+      }
+    },
+    setLang(value) {
+      i18n.locale = value;
+      this.$router.push({
+        params: { lang: value }
+      });
+    }
+  }
 };
 </script>
 

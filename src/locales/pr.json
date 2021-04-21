@@ -1,0 +1,216 @@
+{
+  "header": {
+    "buttons": [
+      {
+        "icon": "mdi-view-dashboard"
+      },
+      {
+        "icon": "mdi-bell"
+      },
+      {
+        "icon": "mdi-account"
+      }
+    ],
+    "menu": {
+      "content": "زبان",
+      "lists": [
+        {
+          "content": "English",
+          "key": "en"
+        },
+        {
+          "content": "فارسی",
+          "key": "pr"
+        }
+      ]
+    },
+    "search": {
+      "label": "جستجو",
+      "icon": "mdi-magnify"
+    },
+    "logo": {
+      "short": "تم",
+      "long": "تیم ما"
+    },
+    "name": "جان اندرو",
+    "user": [
+      {
+        "icon": "پم",
+        "text": "پروفایل من"
+      },
+      {
+        "icon": "وپ",
+        "text": "ویرایش پروفایل"
+      },
+      {
+        "icon": "ت",
+        "text": "تنظیمات"
+      }
+    ],
+    "links": [
+      {
+        "icon": "mdi-view-dashboard",
+        "title": "داشبورد",
+        "route": "/pr",
+        "exact": true
+      },
+      {
+        "icon": "mdi-folder",
+        "title": "پروژه‌های من",
+        "route": "/pr/projects",
+        "exact": false
+      }
+    ]
+  },
+  "dashboard": {
+    "firstCards": [
+      {
+        "header": {
+          "logo": "mdi-earth",
+          "content": "کشور‌های با بیشترین فروش"
+        },
+        "table": {
+          "tHeaders": [
+            {
+              "text": "Flag",
+              "align": "start",
+              "value": "flag"
+            },
+            {
+              "text": "Countery",
+              "align": "start",
+              "value": "name"
+            },
+            {
+              "text": "Numbers",
+              "align": "end",
+              "value": "number"
+            },
+            {
+              "text": "%",
+              "align": "center",
+              "value": "percentage"
+            }
+          ],
+          "tRows": [
+            {
+              "flag": "../assets/flags/usa.png",
+              "name": "آمریکا",
+              "number": "۲۹۲۰",
+              "percentage": "۴۲.۲۸%"
+            },
+            {
+              "flag": "../assets/flags/germany.png",
+              "name": "آلمان",
+              "number": "۱۳۰۰",
+              "percentage": "۱۹.۰۶%"
+            },
+            {
+              "flag": "../assets/flags/australia.png",
+              "name": "استرالیا",
+              "number": "۷۶۰",
+              "percentage": "۱۱.۱۴%"
+            },
+            {
+              "flag": "../assets/flags/uk.png",
+              "name": "انگلیس",
+              "number": "۲۴۲۱",
+              "percentage": "۱۰.۱۲%"
+            },
+            {
+              "flag": "../assets/flags/romania.png",
+              "name": "رمانی",
+              "number": "۶۰۰",
+              "percentage": "۸.۸۰%"
+            },
+            {
+              "flag": "../assets/brasil.png",
+              "name": "برزیل",
+              "number": "۵۵۰",
+              "percentage": "۸.۰۶%"
+            }
+          ]
+        }
+      }
+    ],
+    "charts": [
+      {
+        "title": "بازدید‌های وب سایت",
+        "text": "آخرین عملکرد کمپین",
+        "subtitle": "۱۰ دقیقه پیش"
+      },
+      {
+        "title": "فروش روزانه",
+        "text": "۵۵٪ افزایش در فروش‌های امروز",
+        "subtitle": "۴ دقیقه پیش"
+      },
+      {
+        "title": "وظایف انجام شده",
+        "text": "آخرین عملکرد رقابت‌های انتخاباتی",
+        "subtitle": "۲۶ دقیقه پیش"
+      }
+    ],
+    "items": [
+      {
+        "hI": "mdi-twitter",
+        "hSubtitle": "دنبال کننده ها",
+        "hTitle": "+۲۴۵",
+        "fI": "mdi-clock",
+        "fText": "بروز",
+        "color": "info"
+      },
+      {
+        "hI": "mdi-poll",
+        "hSubtitle": "بازدید‌ها",
+        "hTitle": "۷۵,۵۷۲",
+        "fI": "mdi-tag",
+        "fText": "ردیابی شده از تجزه و تحلیل‌های گوگل",
+        "color": "error"
+      },
+      {
+        "hI": "mdi-store",
+        "hSubtitle": "درآمد",
+        "hTitle": "$ ۳۴,۲۴۵",
+        "fI": "mdi-calendar",
+        "fText": "۲۴ ساعت پیش",
+        "color": "success"
+      },
+      {
+        "hI": "mdi-sofa",
+        "hSubtitle": "رزروها",
+        "hTitle": "۱۸۴",
+        "fI": "mdi-alert",
+        "fText": "فضای بیشتری کسب کنید ..",
+        "color": "warning"
+      }
+    ],
+    "cards": [
+      {
+        "title": "آپارتمان دنج",
+        "text": ".این مکان نزدیک به ساحل بارسلونااست، با ایستگاه اتوبوس فقط 2 دقیقه فاصله دارد و نزدیک به 'ناویلیو' است که می توانید از زندگی شبانه در بارسلونا لذت ببرید",
+        "price": "$۸۹۹",
+        "location": "بارسلونا",
+        "time": "شب"
+      },
+      {
+        "title": "دفتر کاری",
+        "text": ".این مکان نزدیک به ایستگاه مترو است، با ایستگاه اتوبوس فقط 2 دقیقه فاصله دارد و نزدیک به 'ناویلیو' است که می توانید از زندگی شبانه در لندن ، انگلستان لذت ببرید.",
+        "price": "$۱.۱۱۹",
+        "location": "لندن",
+        "time": "شب"
+      },
+      {
+        "title": "قلعه زیبا",
+        "text": "این مکان نزدیک به ایستگاه مترو است، با ایستگاه اتوبوس فقط 2 دقیقه فاصله دارد و نزدیک به 'ناویلیو' است که می توانید از زندگی شبانه در میلان لذت ببرید.",
+        "price": "$۴۵۹",
+        "location": "میلان",
+        "time": "شب"
+      }
+    ]
+  },
+  "projects": {
+    "header": {
+      "content": "پروژه‌ها"
+    }
+  }
+}
