@@ -1460,10 +1460,12 @@
               </v-card-title>
             </v-col>
             <v-col cols="12" sm="10">
-              <div class="float-right">
-                <v-card-subtitle class="body-3 grey--text font-weight-light">{{ item.hSubtitle }}</v-card-subtitle>
-                <v-card-title class="mt-n7 font-weight-light text--primary">{{ item.hTitle }}</v-card-title>
-              </div>
+              <v-row justify="end">
+                <v-card-text class="my-3 pa-0" style="width: 120px;">
+                  <v-card-subtitle class="body-3 grey--text font-weight-light">{{ item.hSubtitle }}</v-card-subtitle>
+                  <v-card-title class="mt-n7 font-weight-light text--primary">{{ item.hTitle }}</v-card-title>
+                </v-card-text>
+              </v-row>
             </v-col>
           </v-row>
 

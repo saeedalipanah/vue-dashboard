@@ -11,5 +11,5 @@ export default new Vuetify({
                 primary: "#FFF"
             }
         }
-    }
+    },
 });
