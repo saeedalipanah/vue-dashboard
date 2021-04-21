@@ -1,19 +1,19 @@
 <template>
   <v-container fluid class="dashboard">
     <v-row>
-      <v-col cols="12">
+      <v-col cols="12" v-for="(fCard, i) in $t('dashboard.firstCards')" :key="i">
         <v-card elevation="1" class="pa-3">
           <v-row class="card-header" no-gutters>
             <v-col cols="12" sm="2">
               <v-card-title
                 class="rounded success elevation-4 icon-title mt-n7"
               >
-                <v-icon large color="white">mdi-earth</v-icon>
+                <v-icon large color="white">{{ fCard.header.logo }}</v-icon>
               </v-card-title>
             </v-col>
             <v-col cols="12" sm="10">
               <v-card-title class="font-weight-light"
-                >Global Sales by Top Locations</v-card-title
+                >{{ fCard.header.content }}</v-card-title
               >
             </v-col>
           </v-row>
@@ -22,7 +22,7 @@
               <v-simple-table>
                 <template v-slot:default>
                   <tbody>
-                    <tr v-for="(row, i) in rows" :key="i">
+                    <tr v-for="(row, i) in fCard.table.tRows" :key="i">
                       <td>
                         <v-img
                           :src="row.flag"
@@ -1355,10 +1355,10 @@
 
           <v-card-text>
             <v-card-title>
-              {{ charts[0].title }}
+              {{ $t('dashboard.charts[0].title') }}
             </v-card-title>
             <v-card-subtitle>
-              {{ charts[0].text }}
+              {{ $t('dashboard.charts[0].text') }}
             </v-card-subtitle>
           </v-card-text>
 
@@ -1367,7 +1367,7 @@
           <v-card-actions>
             <v-icon small>mdi-clock-outline</v-icon>
             <span class="ml-1 caption grey--text font-weight-light">{{
-              charts[0].subtitle
+              $t('dashboard.charts[0].subtitle')
             }}</span>
           </v-card-actions>
         </v-card>
@@ -1392,10 +1392,10 @@
 
           <v-card-text>
             <v-card-title>
-              {{ charts[1].title }}
+              {{ $t('dashboard.charts[1].title') }}
             </v-card-title>
             <v-card-subtitle>
-              {{ charts[1].text }}
+              {{ $t('dashboard.charts[1].text') }}
             </v-card-subtitle>
           </v-card-text>
 
@@ -1404,7 +1404,7 @@
           <v-card-actions>
             <v-icon small>mdi-clock-outline</v-icon>
             <span class="ml-1 caption grey--text font-weight-light">{{
-              charts[1].subtitle
+              $t('dashboard.charts[1].subtitle')
             }}</span>
           </v-card-actions>
         </v-card>
@@ -1429,10 +1429,10 @@
 
           <v-card-text>
             <v-card-title>
-              {{ charts[2].title }}
+              {{ $t('dashboard.charts[2].title') }}
             </v-card-title>
             <v-card-subtitle>
-              {{ charts[2].text }}
+              {{ $t('dashboard.charts[2].text') }}
             </v-card-subtitle>
           </v-card-text>
 
@@ -1441,13 +1441,13 @@
           <v-card-actions>
             <v-icon small>mdi-clock-outline</v-icon>
             <span class="ml-1 caption grey--text font-weight-light">{{
-              charts[2].subtitle
+              $t('dashboard.charts[2].subtitle')
             }}</span>
           </v-card-actions>
         </v-card>
       </v-col>
 
-      <v-col cols="12" sm="6" lg="3" v-for="(item, i) in items" :key="i" class="mb-6">
+      <v-col cols="12" sm="6" lg="3" v-for="(item, i) in $t('dashboard.items')" :key="i" class="mb-6">
         
         <v-card class="px-3" elevation="1">
           <v-row class="card-header" no-gutters>
@@ -1481,7 +1481,7 @@
       </v-col>
 
 
-      <v-col sm="12" md="4" cols="12" v-for="(card ,i) in cards" :key="i">
+      <v-col sm="12" md="4" cols="12" v-for="(card ,i) in $t('dashboard.cards')" :key="i">
         <v-card class="animate mx-auto my-12 px-3" elevation="1">
           
       <v-img
@@ -1546,129 +1546,6 @@
 export default {
   data() {
     return {
-      headers: [
-        {
-          text: "Flag",
-          align: "start",
-          value: "flag",
-        },
-        {
-          text: "Countery",
-          align: "start",
-          value: "name",
-        },
-        { text: "Numbers", align: "end", value: "number" },
-        { text: "%", align: "center", value: "percentage" },
-      ],
-      rows: [
-        {
-          flag: "../assets/flags/usa.png",
-          name: "USA",
-          number: "2920",
-          percentage: "42.28%",
-        },
-        {
-          flag: "../assets/flags/germany.png",
-          name: "Germany",
-          number: "1300",
-          percentage: "19.06%",
-        },
-        {
-          flag: "../assets/flags/australia.png",
-          name: "Australia",
-          number: "760",
-          percentage: "11.14%",
-        },
-        {
-          flag: "../assets/flags/uk.png",
-          name: "United Kingdom",
-          number: "2421",
-          percentage: "10.12%",
-        },
-        {
-          flag: "../assets/flags/romania.png",
-          name: "Romania",
-          number: "	600",
-          percentage: "8.80%",
-        },
-        {
-          flag: "../assets/brasil.png",
-          name: "Brasil",
-          number: "550",
-          percentage: "8.06%",
-        },
-      ],
-      charts: [
-        {
-          title: "Website Views",
-          text: "Last Campaign Performance ",
-          subtitle: "updated 10 minutes ago",
-        },
-        {
-          title: "Daily Sales",
-          text: "55% increase in today's sales",
-          subtitle: "updated 4 minutes ago",
-        },
-        {
-          title: "Completed Tasks",
-          text: "Last Last Campaign Performance",
-          subtitle: "campaign sent 26 minutes ago",
-        },
-      ],
-      items: [
-        {
-          hI: 'mdi-twitter',
-          hSubtitle: 'Followers',
-          hTitle: '+245',
-          fI: 'mdi-clock',
-          fText: 'Just Updated',
-          color: 'info'
-        },
-        {
-          hI: 'mdi-poll',
-          hSubtitle: 'Website Visits',
-          hTitle: '75.521',
-          fI: 'mdi-tag',
-          fText: 'Tracked from Google Analytics',
-          color: 'error'
-        },
-        {
-          hI: 'mdi-store',
-          hSubtitle: 'Revenue',
-          hTitle: '$ 34,245',
-          fI: 'mdi-calendar',
-          fText: 'Last 24 Hours',
-          color: 'success'
-        },
-        {
-          hI: 'mdi-sofa',
-          hSubtitle: 'Bookings',
-          hTitle: '184',
-          fI: 'mdi-alert',
-          fText: 'Get More Space..',
-          color: 'warning'
-        },
-      ],
-      cards: [
-        {
-          title: 'Cozy Apartment',
-          text: 'The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the life in Barcelona',
-          price: '$899',
-          location: 'Barcelona, Spain'
-        },
-        {
-          title: 'Office Studio',
-          text: 'The place is close to Metro Station and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the night life in London, UK.',
-          price: '$1.119',
-          location: 'London, UK'
-        },
-        {
-          title: 'Beautiful Castle',
-          text: 'The place is close to Metro Station and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Milan.',
-          price: '$459',
-          location: 'Milan, Italy'
-        },
-      ]
     };
   },
   methods: {

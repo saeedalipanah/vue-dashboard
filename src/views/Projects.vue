@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-    <h1 class="subheading grey--text">Projects</h1>
+    <h1 class="subheading grey--text">{{ $t('projects.header.content') }}</h1>
   </div>
 </template>
 
