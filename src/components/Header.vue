@@ -60,7 +60,7 @@
       mini-variant
       app
       dark
-      mobile-breakpoint="800"
+      mobile-breakpoint="850"
       :right="right()"
     >
       <v-img
