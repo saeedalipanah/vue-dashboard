@@ -26,7 +26,7 @@
     },
     "search": {
       "label": "جستجو",
-      "icon": "mdi-magnify"
+      "icon": "mdi-magnify elevation-1 white rounded-circle pa-2 grey--text mr-3"
     },
     "logo": {
       "short": "تم",
@@ -156,6 +156,7 @@
         "hSubtitle": "دنبال کننده ها",
         "hTitle": "+۲۴۵",
         "fI": "mdi-clock",
+        "fColor": "",
         "fText": "بروز",
         "color": "info"
       },
@@ -164,6 +165,7 @@
         "hSubtitle": "بازدید‌ها",
         "hTitle": "۷۵,۵۷۲",
         "fI": "mdi-tag",
+        "fColor": "",
         "fText": "ردیابی شده از تجزه و تحلیل‌های گوگل",
         "color": "error"
       },
@@ -172,6 +174,7 @@
         "hSubtitle": "درآمد",
         "hTitle": "$ ۳۴,۲۴۵",
         "fI": "mdi-calendar",
+        "fColor": "",
         "fText": "۲۴ ساعت پیش",
         "color": "success"
       },
@@ -180,6 +183,7 @@
         "hSubtitle": "رزروها",
         "hTitle": "۱۸۴",
         "fI": "mdi-alert",
+        "fColor": "red",
         "fText": "فضای بیشتری کسب کنید ..",
         "color": "warning"
       }

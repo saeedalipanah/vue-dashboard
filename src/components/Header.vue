@@ -13,10 +13,10 @@
       <!-- toolbar buttons -->
       <v-text-field
         :label="`${$t('header.search.label')}`"
-        class="mt-6 mx-2"
+        class="mt-6 mx-10"
         style="max-width: 165px"
-        color="indigo"
-        :prepend-icon="`${$t('header.search.icon')} d-none d-sm-flex`"
+        color="pink darken-4"
+        :append-outer-icon="`${$t('header.search.icon')}`"
       >
       </v-text-field>
 

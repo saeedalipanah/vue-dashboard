@@ -1,13 +1,15 @@
 <template>
   <v-app>
     <app-header></app-header>
-    <v-main class="mx-4 mb-4">
-      <router-view></router-view>
+    <v-main>
+      <router-view class="mb-4 pt-14 px-7"></router-view>
+      <app-footer></app-footer>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import FooterVue from './components/Footer.vue';
 import Header from './components/Header'
 
 export default {
@@ -17,7 +19,8 @@ export default {
   }),
 
   components: {
-    appHeader: Header
+    appHeader: Header,
+    appFooter: FooterVue
   }
 };
 </script>

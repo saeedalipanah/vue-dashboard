@@ -26,7 +26,7 @@
     },
     "search": {
       "label": "Search",
-      "icon": "mdi-magnify"
+      "icon": "mdi-magnify elevation-1 white rounded-circle pa-2 grey--text ml-2"
     },
     "logo": {
       "short": "CT",
@@ -156,6 +156,7 @@
         "hSubtitle": "Followers",
         "hTitle": "+245",
         "fI": "mdi-clock",
+        "fColor": "",
         "fText": "Just Updated",
         "color": "info"
       },
@@ -164,14 +165,16 @@
         "hSubtitle": "Website Visits",
         "hTitle": "75.521",
         "fI": "mdi-tag",
+        "fColor": "",
         "fText": "Tracked from Google Analytics",
-        "color": "error"
+        "color": "myColor"
       },
       {
         "hI": "mdi-store",
         "hSubtitle": "Revenue",
         "hTitle": "$ 34,245",
         "fI": "mdi-calendar",
+        "fColor": "",
         "fText": "Last 24 Hours",
         "color": "success"
       },
@@ -180,6 +183,7 @@
         "hSubtitle": "Bookings",
         "hTitle": "184",
         "fI": "mdi-alert",
+        "fColor": "red",
         "fText": "Get More Space..",
         "color": "warning"
       }
@@ -212,5 +216,29 @@
     "header": {
       "content": "Projects"
     }
+  },
+  "footer": {
+    "links": [
+      {
+        "href": "#",
+        "text": "Creative Tim"
+      },
+      {
+        "href": "#",
+        "text": "About Us"
+      },
+      {
+        "href": "#",
+        "text": "Blog"
+      },
+      {
+        "href": "#",
+        "text": "Licenses"
+      }
+    ],
+    "first": "© 2019, made with",
+    "second": "by ",
+    "link": { "href": "#", "text": " Creative Tim" },
+    "last": " for a better web."
   }
 }

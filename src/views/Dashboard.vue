@@ -2,27 +2,27 @@
   <v-container fluid class="dashboard">
     <v-row>
       <v-col cols="12" v-for="(fCard, i) in $t('dashboard.firstCards')" :key="i">
-        <v-card elevation="1" class="pa-3">
+        <v-card elevation="2" class="pa-3">
           <v-row class="card-header" no-gutters>
             <v-col cols="12" sm="2">
               <v-card-title
-                class="rounded success elevation-4 icon-title mt-n7"
+                class="rounded success elevation-6 icon-title mt-n7"
               >
                 <v-icon large color="white">{{ fCard.header.logo }}</v-icon>
               </v-card-title>
             </v-col>
             <v-col cols="12" sm="10">
-              <v-card-title class="font-weight-light"
+              <v-card-title class="font-weight-light ml-n9 mt-n3"
                 >{{ fCard.header.content }}</v-card-title
               >
             </v-col>
           </v-row>
           <v-row>
             <v-col cols="12" md="6" class="mt-10">
-              <v-simple-table>
+              <v-simple-table class="mx-2">
                 <template v-slot:default>
                   <tbody>
-                    <tr v-for="(row, i) in fCard.table.tRows" :key="i">
+                    <tr v-for="(row, i) in fCard.table.tRows" :key="i" class="font-weight-light">
                       <td>
                         <v-img
                           :src="row.flag"
@@ -1354,10 +1354,10 @@
           </v-col>
 
           <v-card-text>
-            <v-card-title>
+            <v-card-title class="font-weight-light">
               {{ $t('dashboard.charts[0].title') }}
             </v-card-title>
-            <v-card-subtitle>
+            <v-card-subtitle class="font-weight-light">
               {{ $t('dashboard.charts[0].text') }}
             </v-card-subtitle>
           </v-card-text>
@@ -1391,10 +1391,10 @@
           </v-col>
 
           <v-card-text>
-            <v-card-title>
+            <v-card-title class="font-weight-light">
               {{ $t('dashboard.charts[1].title') }}
             </v-card-title>
-            <v-card-subtitle>
+            <v-card-subtitle class="font-weight-light">
               {{ $t('dashboard.charts[1].text') }}
             </v-card-subtitle>
           </v-card-text>
@@ -1428,10 +1428,10 @@
           </v-col>
 
           <v-card-text>
-            <v-card-title>
+            <v-card-title class="font-weight-light">
               {{ $t('dashboard.charts[2].title') }}
             </v-card-title>
-            <v-card-subtitle>
+            <v-card-subtitle class="font-weight-light">
               {{ $t('dashboard.charts[2].text') }}
             </v-card-subtitle>
           </v-card-text>
@@ -1450,36 +1450,42 @@
       <v-col cols="12" sm="6" lg="3" v-for="(item, i) in $t('dashboard.items')" :key="i" class="mb-6">
         
         <v-card class="px-3" elevation="1">
-          <v-row class="card-header" no-gutters>
+          <v-row class="card-header mb-4" no-gutters>
             <v-col cols="12" sm="2">
               <v-card-title
-                class="rounded elevation-4 icon-title mt-n7"
+                class="rounded elevation-4 icon-title mt-n4"
                 :class="item.color"
               >
                 <v-icon large color="white">{{ item.hI }}</v-icon>
               </v-card-title>
             </v-col>
             <v-col cols="12" sm="10">
-              <v-row justify="end">
-                <v-card-text class="my-3 pa-0" style="width: 120px;">
-                  <v-card-subtitle class="body-3 grey--text font-weight-light">{{ item.hSubtitle }}</v-card-subtitle>
-                  <v-card-title class="mt-n7 font-weight-light text--primary">{{ item.hTitle }}</v-card-title>
-                </v-card-text>
-              </v-row>
+              <div class="ml-auto text-right py-2">
+                <div class="body-3 grey--text font-weight-light">
+                  {{ item.hSubtitle }}
+                </div>
+                <div class="headline font-weight-light text--primary">
+                  {{ item.hTitle }}
+                </div>
+              </div>
             </v-col>
           </v-row>
 
-          <v-divider class="mx-2 mb-2"></v-divider>
+          <v-divider class="mx-2"></v-divider>
 
           <v-card-actions>
-            <v-icon small>{{ item.fI }}</v-icon>
-            <span class="mx-1 body-2 grey--text font-weight-light">
+            <v-icon :color="item.fColor" small>{{ item.fI }}</v-icon>
+            <span class="mx-2 caption grey--text font-weight-light">
               {{ item.fText }}
               </span>
           </v-card-actions>
         </v-card>
       </v-col>
 
+
+      <v-col cols="12" sm="12" class="font-weight-light mt-1" style="font-size: 25px;">
+        Manage Listings
+      </v-col>
 
       <v-col sm="12" md="4" cols="12" v-for="(card ,i) in $t('dashboard.cards')" :key="i">
         <v-card class="animate mx-auto my-12 px-3" elevation="1">
@@ -1516,14 +1522,14 @@
             </v-btn>
           </v-col>
 
-          <v-card-text class=" text-center">
-            <v-card-title class="font-weight-light mb-2">
+          <div class="d-flex grow flex-wrap justify-center">
+            <v-card-title class="font-weight-light justify-center">
               {{ card.title }}
             </v-card-title>
-            <v-card-subtitle class="body-1 mb-3 font-weight-light grey--text">
+            <v-card-text class="body-1 text-center mb-3 font-weight-light grey--text">
               {{ card.text }}
-            </v-card-subtitle>
-          </v-card-text>
+            </v-card-text>
+          </div>
 
           <v-divider class="mx-4"></v-divider>
 
