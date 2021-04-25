@@ -3,18 +3,33 @@
     "buttons": [
       {
         "icon": "mdi-view-dashboard",
-        "badge": false
+        "badge": false,
+        "hasList": false
       },
       {
         "icon": "mdi-bell",
         "badge": true,
         "content": "5",
         "color": "error",
-        "class": "ml-n1 mt-n1"
+        "class": "ml-n1 mt-n1",
+        "hasList": true,
+        "list": [
+          "Make Jack Responded to your email",
+          "You have 5 new tasks",
+          "you're now friends with Andrew",
+          "Another Notification",
+          "Another One"
+        ]
       },
       {
         "icon": "mdi-account",
-        "badge": false
+        "badge": false,
+        "hasList": true,
+        "list": [
+          "Profile",
+          "setting",
+          "Log out"
+        ]
       }
     ],
     "lanMenu": {

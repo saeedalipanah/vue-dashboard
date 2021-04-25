@@ -20,18 +20,51 @@
       >
       </v-text-field>
 
-      <v-btn text v-for="(btn, i) in $t('header.buttons')" :key="i">
-        <v-icon dense>{{ btn.icon }}</v-icon>
-        <v-badge
-          v-if="btn.badge"
-          :content="btn.content"
-          :color="btn.color"
-          :class="btn.class"
-          bordered>
-        </v-badge>
-      </v-btn>
+      <v-menu 
+        offset-y
+        left
+        v-for="(btn, i) in $t('header.buttons')" 
+        :key="i"
+        transition="slide-y-transition"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn 
+            text 
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon dense>{{ btn.icon }}</v-icon>
+            <v-badge
+              v-if="btn.badge"
+              :content="btn.content"
+              :color="btn.color"
+              :class="btn.class"
+              bordered>
+            </v-badge>
+          </v-btn>
+        </template>
 
-      <!-- dropdown menu -->
+        <v-list
+          v-if="btn.hasList"
+          dense
+          id="account-list"
+        >
+            <v-list-item 
+              v-for="(item, i) in btn.list" 
+              :key="i" 
+              link>
+              <v-list-item-content>
+                <v-list-item-title class="font-weight-regular">
+                  {{ item }}
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+        </v-list>
+
+      </v-menu>
+
+
+      <!-- language menu -->
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-btn elevation="0" color="grey lighten-3 grey--text text--darken-1" v-bind="attrs" v-on="on">
@@ -41,10 +74,13 @@
         </template>
 
         <v-list
-          v-for="(lan, i) in $t('header.lanMenu.lists')" 
-          :key="i" 
+          dense
         >
-          <v-list-item @click="setLang(lan.key)">
+          <v-list-item
+            v-for="(lan, i) in $t('header.lanMenu.lists')" 
+            :key="i"  
+            @click="setLang(lan.key)"
+            >
             <v-list-item-content>
               <v-list-item-title class="grey-text">
                 {{ lan.content }}
@@ -53,7 +89,7 @@
           </v-list-item>
         </v-list>
       </v-menu>
-      <!-- end dropdown menu -->
+      <!-- end language menu -->
 
       <!-- end toolbar buttons -->
     </v-toolbar>
@@ -150,4 +186,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#account-list {
+  padding: 4px;
+  min-width: 145px;
+}
+
+#account-list .v-list-item {
+  border-radius: 1px;
+}
+
+#account-list .v-list-item:hover {
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  background-color: #d22ee7;
+
+}
 </style>
