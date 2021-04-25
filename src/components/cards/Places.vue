@@ -8,7 +8,6 @@
     <v-img
       :src="`https://picsum.photos/500/300?image=${index * 5 + 10}`"
       :lazy-src="`https://picsum.photos/10/6?image=${index * 5 + 10}`"
-      aspect-ratio="1"
       class="grey lighten-2 card elevation-4"
     >
       <template v-slot:placeholder>

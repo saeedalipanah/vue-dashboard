@@ -73,6 +73,7 @@
         offset-y
         :nudge-left="`${$t('header.lanMenu.nudge')}`"
         nudge-bottom="3"
+        transition="slide-y-transition"
       >
         <template v-slot:activator="{ on, attrs }">
           <v-btn 
@@ -112,9 +113,9 @@
     <!-- navigation menu -->
     <v-navigation-drawer
       v-model="drawer"
-      expand-on-hover
       mini-variant-width="90"
-      mini-variant
+      :mini-variant="mini"
+      :expand-on-hover="mini"
       app
       dark
       mobile-breakpoint="850"
@@ -181,6 +182,7 @@ export default {
   data() {
     return {
       drawer: true,
+      mini: true
     };
   },
   methods: {
@@ -202,6 +204,15 @@ export default {
         params: { lang: value }
       });
     }
+  },
+  mounted() {
+    window.addEventListener("resize", () => {
+      if(window.innerWidth < 850) {
+        this.mini = false;
+      } else {
+        this.mini = true;
+      }
+    });
   }
 };
 </script>

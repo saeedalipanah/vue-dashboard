@@ -9,7 +9,7 @@
               </v-card-title>
             </v-col>
             <v-col cols="12" sm="10">
-              <v-card-title class="font-weight-light ml-n9 mt-n3"
+              <v-card-title class="font-weight-light ml-0 mt-n3"
                 >{{ card.header.content }}</v-card-title
               >
             </v-col>
