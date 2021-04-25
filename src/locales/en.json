@@ -8,6 +8,7 @@
       },
       {
         "icon": "mdi-bell",
+        "nudge": "184",
         "badge": true,
         "content": "5",
         "color": "error",
@@ -23,6 +24,7 @@
       },
       {
         "icon": "mdi-account",
+        "nudge": "81",
         "badge": false,
         "hasList": true,
         "list": [
@@ -34,6 +36,7 @@
     ],
     "lanMenu": {
       "content": "LAN",
+      "nudge": "56",
       "lists": [
         {
           "content": "فارسی",

@@ -3,30 +3,48 @@
     "buttons": [
       {
         "icon": "mdi-view-dashboard",
-        "badge": false
+        "badge": false,
+        "hasList": false
       },
       {
         "icon": "mdi-bell",
+        "nudge": "0",
         "badge": true,
-        "content": "۵",
+        "content": "5",
         "color": "error",
-        "class": "ml-n1 mt-n1"
+        "class": "ml-n1 mt-n1",
+        "hasList": true,
+        "list": [
+          "به جک اطلاع دهید که به ایمیل شما پاسخ دهد",
+          "شما ۵ موضوع جدید دارید",
+          "شما اکنون با اندرو دوست هستید",
+          "اعلان دیگری",
+          "یکی دیگه"
+        ]
       },
       {
         "icon": "mdi-account",
-        "badge": false
+        "nudge": "0",
+        "badge": false,
+        "hasList": true,
+        "list": [
+          "پروفایل",
+          "تنظیمات",
+          "خروج"
+        ]
       }
     ],
     "lanMenu": {
       "content": "زبان",
+      "nudge": "0",
       "lists": [
-        {
-          "content": "English",
-          "key": "en"
-        },
         {
           "content": "فارسی",
           "key": "pr"
+        },
+        {
+          "content": "English",
+          "key": "en"
         }
       ]
     },

@@ -1,6 +1,8 @@
 <template>
-  <v-container class="projects">
-    <h1 class="subheading grey--text">{{ $t('projects.header.content') }}</h1>
+  <v-container>
+    <div class="projects">
+      <h1 class="subheading grey--text">{{ $t('projects.header.content') }}</h1>
+    </div>
   </v-container>
 </template>
 
@@ -10,6 +12,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.projects {
+  height: 100vh;
+}
 
 </style>
