@@ -2,16 +2,22 @@
   "header": {
     "buttons": [
       {
-        "icon": "mdi-view-dashboard"
+        "icon": "mdi-view-dashboard",
+        "badge": false
       },
       {
-        "icon": "mdi-bell"
+        "icon": "mdi-bell",
+        "badge": true,
+        "content": "5",
+        "color": "error",
+        "class": "ml-n1 mt-n1"
       },
       {
-        "icon": "mdi-account"
+        "icon": "mdi-account",
+        "badge": false
       }
     ],
-    "menu": {
+    "lanMenu": {
       "content": "LAN",
       "lists": [
         {
@@ -133,23 +139,37 @@
         }
       }
     ],
-    "charts": [
-      {
-        "title": "Website Views",
-        "text": "Last Campaign Performance ",
-        "subtitle": "updated 10 minutes ago"
-      },
-      {
-        "title": "Daily Sales",
-        "text": "55% increase in today's sales",
-        "subtitle": "updated 4 minutes ago"
-      },
-      {
-        "title": "Completed Tasks",
-        "text": "Last Last Campaign Performance",
-        "subtitle": "campaign sent 26 minutes ago"
-      }
-    ],
+    "secondCards": {
+      "charts": [
+        {
+          "title": "Website Views",
+          "text": "Last Campaign Performance ",
+          "subtitle": "updated 10 minutes ago"
+        },
+        {
+          "title": "Daily Sales",
+          "text": "55% increase in today's sales",
+          "subtitle": "updated 4 minutes ago"
+        },
+        {
+          "title": "Completed Tasks",
+          "text": "Last Last Campaign Performance",
+          "subtitle": "campaign sent 26 minutes ago"
+        }
+      ],
+      "buttons": [
+        {
+          "icon": "mdi-refresh",
+          "tooltip": "Refresh",
+          "color": "info"
+        },
+        {
+          "icon": "mdi-pencil",
+          "tooltip": "Change Date",
+          "color": ""
+        }
+      ]
+    },
     "items": [
       {
         "hI": "mdi-twitter",
@@ -188,29 +208,51 @@
         "color": "warning"
       }
     ],
-    "cards": [
-      {
-        "title": "Cozy Apartment",
-        "text": "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the life in Barcelona",
-        "price": "$899",
-        "location": "Barcelona, Spain",
-        "time": "Night"
-      },
-      {
-        "title": "Office Studio",
-        "text": "The place is close to Metro Station and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the night life in London, UK.",
-        "price": "$1.119",
-        "location": "London, UK",
-        "time": "Night"
-      },
-      {
-        "title": "Beautiful Castle",
-        "text": "The place is close to Metro Station and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Milan.",
-        "price": "$459",
-        "location": "Milan, Italy",
-        "time": "Night"
-      }
-    ]
+    "row": {
+      "content": "Manage Listings"
+    },
+    "lastCards": {
+      "cards": [
+        {
+          "title": "Cozy Apartment",
+          "text": "The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the life in Barcelona",
+          "price": "$899",
+          "location": "Barcelona, Spain",
+          "time": "Night"
+        },
+        {
+          "title": "Office Studio",
+          "text": "The place is close to Metro Station and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the night life in London, UK.",
+          "price": "$1.119",
+          "location": "London, UK",
+          "time": "Night"
+        },
+        {
+          "title": "Beautiful Castle",
+          "text": "The place is close to Metro Station and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Milan.",
+          "price": "$459",
+          "location": "Milan, Italy",
+          "time": "Night"
+        }
+      ],
+      "buttons": [
+        {
+          "icon": "mdi-view-split-vertical",
+          "color": "grey darken-2",
+          "tooltip": "view"
+        },
+        {
+          "icon": "mdi-pencil",
+          "color": "success",
+          "tooltip": "edit"
+        },
+        {
+          "icon": "mdi-close",
+          "color": "error",
+          "tooltip": "remove"
+        }
+      ]
+    }
   },
   "projects": {
     "header": {
@@ -238,7 +280,10 @@
     ],
     "first": "© 2019, made with",
     "second": "by ",
-    "link": { "href": "#", "text": " Creative Tim" },
+    "link": {
+      "href": "#",
+      "text": " Creative Tim"
+    },
     "last": " for a better web."
   }
 }

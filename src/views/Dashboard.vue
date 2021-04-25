@@ -1337,28 +1337,41 @@
       </v-col>
 
       <v-col cols="12" lg="4" sm="12" md="12">
-        <v-card class="animate mx-auto my-12 px-3" elevation="1">
+        <v-card 
+          class="mx-auto my-12 px-3" 
+          elevation="1"
+          @mouseover="animateChart(0)"
+          @mouseleave="endChart(0)"
+        >
           <v-img
-            class="start elevation-4 rounded"
+            class="chart elevation-4 rounded"
             src="../assets/charts/chart1.png"
           >
           </v-img>
 
           <v-col class="text-center py-0 mt-n12 hide" cols="12">
-            <v-btn text rounded color="info">
-              <v-icon>mdi-refresh</v-icon>
-            </v-btn>
-            <v-btn text rounded>
-              <v-icon>mdi-pencil</v-icon>
-            </v-btn>
+            <v-tooltip bottom v-for="(btn, i) in $t('dashboard.secondCards.buttons')" :key="i">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn 
+                  icon
+                  :color="btn.color"
+                  v-bind="attrs"
+                  v-on="on"
+                  class="mx-2"
+                >
+                  <v-icon>{{ btn.icon }}</v-icon>
+                </v-btn>
+              </template>
+              <span>{{ btn.tooltip }}</span>
+            </v-tooltip>
           </v-col>
 
           <v-card-text>
             <v-card-title class="font-weight-light">
-              {{ $t('dashboard.charts[0].title') }}
+              {{ $t('dashboard.secondCards.charts[0].title') }}
             </v-card-title>
             <v-card-subtitle class="font-weight-light">
-              {{ $t('dashboard.charts[0].text') }}
+              {{ $t('dashboard.secondCards.charts[0].text') }}
             </v-card-subtitle>
           </v-card-text>
 
@@ -1367,35 +1380,48 @@
           <v-card-actions>
             <v-icon small>mdi-clock-outline</v-icon>
             <span class="mx-1 body-2 grey--text font-weight-light">{{
-              $t('dashboard.charts[0].subtitle')
+              $t('dashboard.secondCards.charts[0].subtitle')
             }}</span>
           </v-card-actions>
         </v-card>
       </v-col>
 
       <v-col cols="12" lg="4" sm="12" md="12">
-        <v-card class="animate mx-auto my-12 px-3" elevation="1">
+        <v-card 
+          class="mx-auto my-12 px-3"
+          elevation="1"
+          @mouseover="animateChart(1)"
+          @mouseleave="endChart(1)"
+        >
           <v-img
-            class="start elevation-4 rounded"
+            class="chart elevation-4 rounded"
             src="../assets/charts/chart2.png"
           >
           </v-img>
 
           <v-col class="text-center py-0 mt-n12 hide" cols="12">
-            <v-btn text rounded color="info">
-              <v-icon>mdi-refresh</v-icon>
-            </v-btn>
-            <v-btn text rounded>
-              <v-icon>mdi-pencil</v-icon>
-            </v-btn>
+            <v-tooltip bottom v-for="(btn, i) in $t('dashboard.secondCards.buttons')" :key="i">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn 
+                  icon
+                  :color="btn.color"
+                  v-bind="attrs"
+                  v-on="on"
+                  class="mx-2"
+                >
+                  <v-icon>{{ btn.icon }}</v-icon>
+                </v-btn>
+              </template>
+              <span>{{ btn.tooltip }}</span>
+            </v-tooltip>
           </v-col>
 
           <v-card-text>
             <v-card-title class="font-weight-light">
-              {{ $t('dashboard.charts[1].title') }}
+              {{ $t('dashboard.secondCards.charts[1].title') }}
             </v-card-title>
             <v-card-subtitle class="font-weight-light">
-              {{ $t('dashboard.charts[1].text') }}
+              {{ $t('dashboard.secondCards.charts[1].text') }}
             </v-card-subtitle>
           </v-card-text>
 
@@ -1404,35 +1430,48 @@
           <v-card-actions>
             <v-icon small>mdi-clock-outline</v-icon>
             <span class="mx-1 body-2 grey--text font-weight-light">{{
-              $t('dashboard.charts[1].subtitle')
+              $t('dashboard.secondCards.charts[1].subtitle')
             }}</span>
           </v-card-actions>
         </v-card>
       </v-col>
 
       <v-col cols="12" lg="4" sm="12" md="12">
-        <v-card class="animate mx-auto my-12 px-3" elevation="1">
+        <v-card 
+          class="mx-auto my-12 px-3" 
+          elevation="1"
+          @mouseover="animateChart(2)"
+          @mouseleave="endChart(2)"
+        >
           <v-img
-            class="start elevation-4 rounded"
+            class="chart elevation-4 rounded"
             src="../assets/charts/chart3.png"
           >
           </v-img>
 
           <v-col class="text-center py-0 mt-n12 hide" cols="12">
-            <v-btn text rounded color="info">
-              <v-icon>mdi-refresh</v-icon>
-            </v-btn>
-            <v-btn text rounded>
-              <v-icon>mdi-pencil</v-icon>
-            </v-btn>
+            <v-tooltip bottom v-for="(btn, i) in $t('dashboard.secondCards.buttons')" :key="i">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn 
+                  icon
+                  :color="btn.color"
+                  v-bind="attrs"
+                  v-on="on"
+                  class="mx-2"
+                >
+                  <v-icon>{{ btn.icon }}</v-icon>
+                </v-btn>
+              </template>
+              <span>{{ btn.tooltip }}</span>
+            </v-tooltip>
           </v-col>
 
           <v-card-text>
             <v-card-title class="font-weight-light">
-              {{ $t('dashboard.charts[2].title') }}
+              {{ $t('dashboard.secondCards.charts[2].title') }}
             </v-card-title>
             <v-card-subtitle class="font-weight-light">
-              {{ $t('dashboard.charts[2].text') }}
+              {{ $t('dashboard.secondCards.charts[2].text') }}
             </v-card-subtitle>
           </v-card-text>
 
@@ -1441,7 +1480,7 @@
           <v-card-actions>
             <v-icon small>mdi-clock-outline</v-icon>
             <span class="mx-1 body-2 grey--text font-weight-light">{{
-              $t('dashboard.charts[2].subtitle')
+              $t('dashboard.secondCards.charts[2].subtitle')
             }}</span>
           </v-card-actions>
         </v-card>
@@ -1460,7 +1499,7 @@
               </v-card-title>
             </v-col>
             <v-col cols="12" sm="10">
-              <div class="ml-auto text-right py-2">
+              <div class="ml-auto text-end py-2">
                 <div class="body-3 grey--text font-weight-light">
                   {{ item.hSubtitle }}
                 </div>
@@ -1484,17 +1523,22 @@
 
 
       <v-col cols="12" sm="12" class="font-weight-light mt-1" style="font-size: 25px;">
-        Manage Listings
+        {{ $t('dashboard.row.content') }}
       </v-col>
 
-      <v-col sm="12" md="4" cols="12" v-for="(card ,i) in $t('dashboard.cards')" :key="i">
-        <v-card class="animate mx-auto my-12 px-3" elevation="1">
+      <v-col sm="12" md="4" cols="12" v-for="(card ,i) in $t('dashboard.lastCards.cards')" :key="i">
+        <v-card 
+          class="mx-auto my-12 px-3" 
+          elevation="1"
+          @mouseover="animateCard(i)"
+          @mouseleave="endCard(i)"
+        >
           
       <v-img
         :src="`https://picsum.photos/500/300?image=${i * 5 + 10}`"
         :lazy-src="`https://picsum.photos/10/6?image=${i * 5 + 10}`"
         aspect-ratio="1"
-        class="grey lighten-2 start elevation-4"
+        class="grey lighten-2 card elevation-4"
       >
         <template v-slot:placeholder>
           <v-row
@@ -1511,15 +1555,20 @@
       </v-img>
 
           <v-col class="text-center py-0 mt-n12 hide" cols="12">
-            <v-btn text rounded color="grey darken-2">
-              <v-icon>mdi-view-split-vertical</v-icon>
-            </v-btn>
-            <v-btn text rounded class="success--text">
-              <v-icon>mdi-refresh</v-icon>
-            </v-btn>
-            <v-btn text rounded class="error--text">
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
+            <v-tooltip bottom v-for="(btn, i) in $t('dashboard.lastCards.buttons')" :key="i">
+              <template v-slot:activator="{ on, attrs }">
+                <v-btn 
+                  icon
+                  :color="btn.color"
+                  class="mx-2"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  <v-icon>{{ btn.icon }}</v-icon>
+                </v-btn>
+              </template>
+              <span>{{ btn.tooltip }}</span>
+            </v-tooltip>
           </v-col>
 
           <div class="d-flex grow flex-wrap justify-center">
@@ -1555,6 +1604,26 @@ export default {
     };
   },
   methods: {
+    animateChart(value) {
+      const charts = document.getElementsByClassName('chart')[value];
+
+      charts.classList.add('end');
+    },
+    endChart(value) {
+      const charts = document.getElementsByClassName('chart')[value];
+
+      charts.classList.remove('end');
+    },
+    animateCard(value) {
+      const cards = document.getElementsByClassName('card')[value];
+
+      cards.classList.add('end');
+    },
+    endCard(value) {
+      const charts = document.getElementsByClassName('card')[value];
+
+      charts.classList.remove('end');
+    },
   },
 };
 </script>
@@ -1576,16 +1645,16 @@ export default {
   align-items: center;
 }
 
-.start {
+.chart,
+.card {
   top: -15px;
   z-index: 1;
   transition: all 0.4s ease;
 }
 
-.start:hover {
+.end {
   transform: translateY(-35px);
 }
-
 
 
 .hide {

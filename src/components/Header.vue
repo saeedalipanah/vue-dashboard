@@ -20,8 +20,15 @@
       >
       </v-text-field>
 
-      <v-btn text v-for="(btn, i) in $t('header.buttons')" :key="i" color="grey darken-1">
-        <v-icon>{{ btn.icon }}</v-icon>
+      <v-btn text v-for="(btn, i) in $t('header.buttons')" :key="i">
+        <v-icon dense>{{ btn.icon }}</v-icon>
+        <v-badge
+          v-if="btn.badge"
+          :content="btn.content"
+          :color="btn.color"
+          :class="btn.class"
+          bordered>
+        </v-badge>
       </v-btn>
 
       <!-- dropdown menu -->
@@ -29,12 +36,12 @@
         <template v-slot:activator="{ on, attrs }">
           <v-btn elevation="0" color="grey lighten-3 grey--text text--darken-1" v-bind="attrs" v-on="on">
             <v-icon>mdi-chevron-down</v-icon>
-            <span>{{ $t('header.menu.content') }}</span>
+            <span>{{ $t('header.lanMenu.content') }}</span>
           </v-btn>
         </template>
 
         <v-list
-          v-for="(lan, i) in $t('header.menu.lists')" 
+          v-for="(lan, i) in $t('header.lanMenu.lists')" 
           :key="i" 
         >
           <v-list-item @click="setLang(lan.key)">
